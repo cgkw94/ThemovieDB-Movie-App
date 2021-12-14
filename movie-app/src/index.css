@@ -1,0 +1,11 @@
+.movie-thumbnail {
+  width: 1500px;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.img {
+  width: 200px;
+}

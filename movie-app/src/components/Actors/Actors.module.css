@@ -1,0 +1,13 @@
+.img {
+  width: 154px;
+  height: auto;
+}
+
+.actor {
+  display: inline-flex;
+  width: 300px;
+}
+
+.actorsContainer {
+  display: block;
+}
