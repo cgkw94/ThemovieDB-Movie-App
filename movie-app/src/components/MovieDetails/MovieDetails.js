@@ -55,8 +55,8 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <Header />
       <h1>
-        <Header />
         <Link exact to="/">
           Back
         </Link>{" "}

@@ -10,7 +10,9 @@ const Header = () => {
         <img className={styles.img} src={logo} />
       </a>
       <Link to="/signup">
-        <h4>Sign Up</h4>
+        <span>
+          <h4>Sign Up</h4>
+        </span>
       </Link>
       <Link to="/login">
         <h4>Login</h4>
