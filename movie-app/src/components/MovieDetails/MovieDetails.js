@@ -5,6 +5,8 @@ import Spinner from "../Spinner/Spinner";
 import Actors from "../Actors/Actors";
 import MovieInfo from "../MovieInfo/MovieInfo";
 import styles from "./MovieDetails.module.css";
+import MovieInfoExtend from "../MovieInfoExtend/MovieInfoExtend";
+import Header from "../Header/Header";
 
 const MovieDetails = () => {
   const params = useParams();
@@ -54,8 +56,9 @@ const MovieDetails = () => {
   return (
     <div>
       <h1>
+        <Header />
         <Link exact to="/">
-          Home
+          Back
         </Link>{" "}
         / {movieDetails.original_title}
       </h1>
@@ -64,6 +67,11 @@ const MovieDetails = () => {
       ) : (
         <>
           <MovieInfo movie={movieDetails} directors={directors} />
+          <MovieInfoExtend
+            runtime={movieDetails.runtime}
+            budget={movieDetails.budget}
+            revenue={movieDetails.revenue}
+          />
           <h1>Casts</h1>
           <Actors actors={actors} />
         </>
