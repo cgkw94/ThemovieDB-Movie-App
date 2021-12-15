@@ -22,12 +22,13 @@ const SignUp = () => {
       return [...prevState, userDetails];
     });
 
+    localStorage.setItem("user", JSON.stringify(user));
+
     alert(
       `Your account (${userDetails.username}) has been successfully created! Please check your email and confirm your registration `
     );
 
     history.push("/login");
-    localStorage.setItem("user", JSON.stringify(user));
   };
 
   return (

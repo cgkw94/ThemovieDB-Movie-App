@@ -6,6 +6,10 @@ import MovieInfo from "../MovieInfo/MovieInfo";
 import styles from "./MovieDetails.module.css";
 import MovieInfoExtend from "../MovieInfoExtend/MovieInfoExtend";
 import Header from "../Header/Header";
+import {
+  API_URL,
+  API_KEY,
+} from "../../Configs";
 
 const MovieDetails = () => {
   const params = useParams();
@@ -40,8 +44,8 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
-    const movieUrl = `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=1ada12e72311ae951cf663b616d5c520&language=en-US`;
-    const creditsUrl = `https://api.themoviedb.org/3/movie/${params.movieId}/credits?api_key=1ada12e72311ae951cf663b616d5c520&language=en-US`;
+    const movieUrl = `${API_URL}movie/${params.movieId}?api_key=${API_KEY}&language=en-US`;
+    const creditsUrl = `${API_URL}movie/${params.movieId}/credits?api_key=${API_KEY}&language=en-US`;
 
     fetchCreditDetails(creditsUrl);
     fetchMovieDetails(movieUrl);

@@ -1,6 +1,7 @@
 import React from "react";
 import MovieThumbnail from "../MovieThumbnail/MovieThumbnail";
 import "./MovieInfo-module.css";
+import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../Configs";
 
 const MovieInfo = (props) => {
   return (
@@ -8,7 +9,7 @@ const MovieInfo = (props) => {
       className="movie-info-container"
       style={{
         background: props.movie.backdrop_path
-          ? `url(https://image.tmdb.org/t/p/w1280/${props.movie.backdrop_path})`
+          ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}/${props.movie.backdrop_path})`
           : "#000",
       }}
     >

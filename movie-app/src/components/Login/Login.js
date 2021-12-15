@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
-  const [users, setUsers] = useState(JSON.parse(localStorage.getItem("user")));
+  const users = JSON.parse(localStorage.getItem("user"));
   console.log(users);
 
   const onSubmit = () => {

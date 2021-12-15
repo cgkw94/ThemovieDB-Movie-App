@@ -3,6 +3,10 @@ import DisplayPoster from "../DisplayPoster/DisplayPoster";
 import DisplayTrending from "../DisplayTrending/DisplayTrending";
 import Spinner from "../Spinner/Spinner";
 import "./Lower.css";
+import {
+  API_URL,
+  API_KEY,
+} from "../../Configs";
 
 const Lower = (props) => {
   const searchInput = props.search;
@@ -34,10 +38,8 @@ const Lower = (props) => {
 
   //user search
   useEffect(() => {
-    const searchUrl =
-      "https://api.themoviedb.org/3/search/movie?api_key=1ada12e72311ae951cf663b616d5c520&page=1&query=";
-    const trendingUrl =
-      "https://api.themoviedb.org/3/movie/popular?api_key=1ada12e72311ae951cf663b616d5c520&language=en-US&page=1";
+    const searchUrl = `${API_URL}search/movie?api_key=${API_KEY}&page=1&query=`;
+    const trendingUrl = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
     if (searchInput === "") {
       movieTrending(trendingUrl);

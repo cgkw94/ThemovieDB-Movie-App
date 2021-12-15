@@ -2,10 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./DisplayTrending.module.css";
 import noImage from "./no_image.jpg";
+import {
+  API_URL,
+  API_KEY,
+  IMAGE_BASE_URL,
+  POSTER_SIZE,
+  BACKDROP_SIZE,
+} from "../../Configs";
 
 const DisplayTrending = (props) => {
   const displayTrending = props.trending.map((data, index) => {
-    const posterImage = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+    const posterImage = `${IMAGE_BASE_URL}${POSTER_SIZE}/${data.poster_path}`;
 
     return (
       <Link to={"./movie/" + data.id}>
