@@ -11,29 +11,28 @@ const Upper = (props) => {
     setUserSearch(event.target.value);
   };
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.preventDefault();
     props.liftState(userSearch);
     setUserSearch("");
   };
 
   return (
-    <><Header />
-    <div className="upper-container">
-      <Input
-        id="search"
-        type="text"
-        onChange={handleChange}
-        value={userSearch}
-      />
-      <Button
-        type="submit"
-        id="submit-btn"
-        onClick={handleClick}
-        value="Submit"
-      />
-    </div>
+    <>
+      <Header />
+      <div className="upper-container">
+        <form onSubmit={handleClick}>
+          <Input
+            id="search"
+            type="text"
+            onChange={handleChange}
+            value={userSearch}
+            placeholder="Search Movie"
+          />
+          <Button type="submit" id="submit-btn" value="Submit" />
+        </form>
+      </div>
     </>
-    
   );
 };
 

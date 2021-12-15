@@ -16,7 +16,7 @@ const SignUp = () => {
   });
 
   const [user, setUser] = useState([]);
-
+  
   const onSubmit = () => {
     setUser((prevState) => {
       return [...prevState, userDetails];
