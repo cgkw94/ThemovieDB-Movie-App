@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 import Actors from "../Actors/Actors";
 import MovieInfo from "../MovieInfo/MovieInfo";
@@ -42,15 +41,10 @@ const MovieDetails = () => {
 
   useEffect(() => {
     const movieUrl = `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=1ada12e72311ae951cf663b616d5c520&language=en-US`;
-
-    fetchMovieDetails(movieUrl);
-  }, []);
-
-  //fetch actors and directors
-  useEffect(() => {
     const creditsUrl = `https://api.themoviedb.org/3/movie/${params.movieId}/credits?api_key=1ada12e72311ae951cf663b616d5c520&language=en-US`;
 
     fetchCreditDetails(creditsUrl);
+    fetchMovieDetails(movieUrl);
   }, []);
 
   return (

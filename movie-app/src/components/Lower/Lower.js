@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DisplayPoster from "../DisplayPoster/DisplayPoster";
 import DisplayTrending from "../DisplayTrending/DisplayTrending";
 import Spinner from "../Spinner/Spinner";
+import "./Lower.css";
 
 const Lower = (props) => {
   const searchInput = props.search;
@@ -52,12 +53,12 @@ const Lower = (props) => {
         <Spinner />
       ) : search ? (
         <>
-          <div>Searching for: {searchInput}</div>
+          <div className="head">Searching for: {searchInput}</div>
           <DisplayPoster movies={searchMovie} />
         </>
       ) : (
         <>
-          <div>Popular</div>
+          <div className="head">Popular</div>
           <DisplayTrending trending={trendingMovie} />
         </>
       )}

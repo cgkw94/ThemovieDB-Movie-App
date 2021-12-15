@@ -9,14 +9,10 @@ const Header = () => {
       <a href="/">
         <img className={styles.img} src={logo} />
       </a>
-      <Link to="/signup">
-        <span>
-          <h4>Sign Up</h4>
-        </span>
-      </Link>
-      <Link to="/login">
-        <h4>Login</h4>
-      </Link>
+
+      <h4>
+        <Link to="/signup">Sign Up</Link> / <Link to="/login">Login</Link>
+      </h4>
     </div>
   );
 };

@@ -7,11 +7,20 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   const { register, formState, handleSubmit } = useForm();
 
-  const onSubmit = () => {
-    console.log("submitted");
-  };
+  const [userDetails, setUserDetails] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
-  console.log(formState.errors);
+  const [user, setUser] = useState([]);
+
+  const onSubmit = () => {
+    setUser((prevState) => {
+      return [userDetails, ...prevState];
+    });
+    localStorage.setItem("user", JSON.stringify(user));
+  };
 
   return (
     <>
@@ -32,6 +41,11 @@ const SignUp = () => {
             type="text"
             id="username"
             {...register("username", {
+              onChange: (e) => {
+                setUserDetails((prevState) => {
+                  return { ...prevState, username: e.target.value };
+                });
+              },
               required: "Username Required!",
               minLength: {
                 message: "Username must be at least 5 characters!",
@@ -49,6 +63,11 @@ const SignUp = () => {
             type="text"
             id="email"
             {...register("email", {
+              onChange: (e) => {
+                setUserDetails((prevState) => {
+                  return { ...prevState, email: e.target.value };
+                });
+              },
               required: "Email Required!",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -66,7 +85,16 @@ const SignUp = () => {
             type="text"
             id="password"
             {...register("password", {
+              onChange: (e) => {
+                setUserDetails((prevState) => {
+                  return { ...prevState, password: e.target.value };
+                });
+              },
               required: "Password required!",
+              minLength: {
+                message: "Password must be at least 8 characters!",
+                value: 8,
+              },
             })}
           />
         </div>
