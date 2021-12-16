@@ -13,7 +13,7 @@ const MovieThumbnail = (props) => {
             ? `${IMAGE_BASE_URL}${POSTER_SIZE}/${props.movie.poster_path}`
             : noImage
         }
-        alt="moviethumb"
+        alt="moviethumbnail"
       />
     </>
   );

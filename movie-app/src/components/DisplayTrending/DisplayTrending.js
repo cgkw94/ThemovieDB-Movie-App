@@ -21,6 +21,7 @@ const DisplayTrending = (props) => {
           key={index}
           src={data.poster_path ? posterImage : noImage}
           id={data.id}
+          alt="moviethumbnail"
         />
       </Link>
     );
