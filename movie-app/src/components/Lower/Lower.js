@@ -39,6 +39,10 @@ const Lower = (props) => {
     setTrendingCount(trendingCount + 1);
   };
 
+  const loadLessTrending = () => {
+    setTrendingCount(trendingCount - 1);
+  };
+
   useEffect(() => {
     const searchUrl = `${API_URL}search/movie?api_key=${API_KEY}&page=1&query=`;
     const trendingUrl = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -72,6 +76,7 @@ const Lower = (props) => {
             Popular {trendingCount > 1 ? <>/ Page: {trendingCount}</> : null}
           </div>
           <DisplayTrending trending={trendingMovie} loading={loading} />
+          <Button type="submit" value="Prev Page" onClick={loadLessTrending} />
           <Button type="submit" value="Next Page" onClick={loadMoreTrending} />
         </>
       )}
