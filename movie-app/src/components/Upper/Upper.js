@@ -21,7 +21,7 @@ const Upper = (props) => {
     <div classnName={styles.container}>
       <Header />
       <div className="upper-container">
-        <form onSubmit={handleClick}>
+        <form className={styles.form} onSubmit={handleClick}>
           <Input
             id="search"
             type="text"

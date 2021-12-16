@@ -3,4 +3,17 @@
   margin-top: 20px;
   margin-bottom: -40px;
   margin-left: 50px;
+  color: #fff;
+}
+
+#prevpage {
+  margin: 40px 0 50px 460px;
+  width: 100px;
+  height: 50px;
+}
+
+#nextpage {
+  margin-left: 50px;
+  width: 100px;
+  height: 50px;
 }

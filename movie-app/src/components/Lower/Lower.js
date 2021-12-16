@@ -76,8 +76,18 @@ const Lower = (props) => {
             Popular {trendingCount > 1 ? <>/ Page: {trendingCount}</> : null}
           </div>
           <DisplayTrending trending={trendingMovie} loading={loading} />
-          <Button type="submit" value="Prev Page" onClick={loadLessTrending} />
-          <Button type="submit" value="Next Page" onClick={loadMoreTrending} />
+          <Button
+            id="prevpage"
+            type="submit"
+            value="Prev Page"
+            onClick={loadLessTrending}
+          />
+          <Button
+            id="nextpage"
+            type="submit"
+            value="Next Page"
+            onClick={loadMoreTrending}
+          />
         </>
       )}
     </div>

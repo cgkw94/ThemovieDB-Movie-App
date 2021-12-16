@@ -6,14 +6,26 @@
 h1 {
   font-family: Arial, sans-serif;
   font-size: 25px;
+  color: #fff;
 }
 
+h2 {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin: 50px 0 -40px 52px;
+  font-size: 40px;
+}
 a {
-  color: black;
+  color: #fff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #00f;
+  color: yellow;
   text-decoration: underline;
+}
+
+.home {
+  margin-top: 25px;
+  margin-bottom: 12px;
 }

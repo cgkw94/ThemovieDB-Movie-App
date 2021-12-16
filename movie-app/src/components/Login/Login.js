@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import { useForm } from "react-hook-form";
+import styles from "./Login.module.css";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -23,7 +24,7 @@ const Login = () => {
         / Login
       </h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="username">
             <p>Username</p>
