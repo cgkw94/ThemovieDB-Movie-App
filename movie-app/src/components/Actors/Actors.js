@@ -14,8 +14,8 @@ const Actors = (props) => {
           src={data.profile_path ? actorImage : noImage}
           alt="actorthumb"
         />
-        <div>{data.name} as:</div>
-        <div>{data.character}</div>
+        <div className={styles.name}>{data.name}</div>
+        <div className={styles.character}>{data.character}</div>
       </div>
     );
   });

@@ -1,0 +1,10 @@
+.info {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  margin-left: 80px;
+}
+
+.movieinfocontainer {
+  background: rgba(0, 0, 0, 0.899);
+  color: #fff;
+}

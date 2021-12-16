@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
-import "./Upper.module.css";
+import styles from "./Upper.module.css";
 
 const Upper = (props) => {
   const [userSearch, setUserSearch] = useState("");
@@ -18,7 +18,7 @@ const Upper = (props) => {
   };
 
   return (
-    <>
+    <div classnName={styles.container}>
       <Header />
       <div className="upper-container">
         <form onSubmit={handleClick}>
@@ -32,7 +32,7 @@ const Upper = (props) => {
           <Button type="submit" id="submit-btn" value="Submit" />
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

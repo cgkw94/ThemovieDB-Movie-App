@@ -1,14 +1,17 @@
 import React from "react";
 import { formatMoney, formatTime } from "../../Formatting";
+import styles from "./MovieInfoExtend.module.css";
 
 const MovieInfoExtend = (props) => {
   return (
-    <div className="movie-info-extend">
-      <div className="running-time">
+    <div className={styles.movieinfocontainer}>
+      <span className={styles.info}>
         Running Time: {formatTime(props.runtime)}
-      </div>
-      <div className="budget">Budget: {formatMoney(props.budget)} </div>
-      <div className="revenue">Revenue: {formatMoney(props.revenue)} </div>
+      </span>
+      <span className={styles.info}>Budget: {formatMoney(props.budget)} </span>
+      <span className={styles.info}>
+        Revenue: {formatMoney(props.revenue)}{" "}
+      </span>
     </div>
   );
 };

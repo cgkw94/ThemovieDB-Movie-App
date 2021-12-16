@@ -23,14 +23,22 @@
   background: rgb(0, 0, 0, 0.7);
   position: relative;
 }
+
 .movie-info-text h1 {
   margin-bottom: 30px;
+  font-size: 30px;
+  color:bisque
+}
+
+.movie-info-text h3 {
+  font-size: 22px;
+  color:rgb(172, 198, 225);
 }
 
 .movie-info-text p {
   font-family: Arial, sans-serif;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 15px;
+  line-height: 30px;
   width: auto;
 }
 

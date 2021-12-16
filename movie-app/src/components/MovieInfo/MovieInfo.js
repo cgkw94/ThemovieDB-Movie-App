@@ -19,7 +19,7 @@ const MovieInfo = (props) => {
         </div>
         <div className="movie-info-text">
           <h1>{props.movie.title}</h1>
-          <h3>OVERVIEW</h3>
+          <h3>PLOT</h3>
           <p>{props.movie.overview}</p>
           <h3>IMDB RATING</h3>
           <div className="rating">

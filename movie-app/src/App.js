@@ -9,7 +9,6 @@ import Login from "./components/Login/Login";
 function App() {
   const [userSearch, setUserSearch] = useState("");
 
-  //lift state function
   const userSearchChange = (input) => {
     setUserSearch(input);
   };
