@@ -8,7 +8,6 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const users = JSON.parse(localStorage.getItem("user"));
-  console.log(users);
 
   const onSubmit = () => {
     console.log("login successful");

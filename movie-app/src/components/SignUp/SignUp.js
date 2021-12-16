@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
 import { Link, useHistory } from "react-router-dom";
+import styles from "./SignUp.module.css";
 
 const SignUp = () => {
   const history = useHistory();
@@ -16,7 +17,7 @@ const SignUp = () => {
   });
 
   const [user, setUser] = useState([]);
-  
+
   const onSubmit = () => {
     setUser((prevState) => {
       return [...prevState, userDetails];
@@ -40,7 +41,8 @@ const SignUp = () => {
         </Link>{" "}
         / Sign Up
       </h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.form}>
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="username">
             <p>Username</p>
@@ -117,6 +119,8 @@ const SignUp = () => {
           <Button value="Register" type="submit" />
         </div>
       </form>
+      </div>
+      
     </>
   );
 };

@@ -6,10 +6,7 @@ import MovieInfo from "../MovieInfo/MovieInfo";
 import styles from "./MovieDetails.module.css";
 import MovieInfoExtend from "../MovieInfoExtend/MovieInfoExtend";
 import Header from "../Header/Header";
-import {
-  API_URL,
-  API_KEY,
-} from "../../Configs";
+import { API_URL, API_KEY } from "../../Configs";
 
 const MovieDetails = () => {
   const params = useParams();
@@ -54,12 +51,14 @@ const MovieDetails = () => {
   return (
     <div>
       <Header />
-      <h1>
-        <Link exact to="/">
-          Back
-        </Link>{" "}
-        / {movieDetails.original_title}
-      </h1>
+      <div className={styles.home}>
+        <h1>
+          <Link exact to="/">
+            Home
+          </Link>{" "}
+          / {movieDetails.original_title}
+        </h1>
+      </div>
       {loading ? (
         <Spinner />
       ) : (
