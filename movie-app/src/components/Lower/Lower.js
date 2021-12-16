@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import DisplayPoster from "../DisplayPoster/DisplayPoster";
 import DisplayTrending from "../DisplayTrending/DisplayTrending";
 import Spinner from "../Spinner/Spinner";
+import Button from "../Button/Button";
 import "./Lower.css";
-import {
-  API_URL,
-  API_KEY,
-} from "../../Configs";
+import { API_URL, API_KEY } from "../../Configs";
 
 const Lower = (props) => {
   const searchInput = props.search;
@@ -15,6 +13,7 @@ const Lower = (props) => {
   const [searchMovie, setSearchMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState(false);
+  const [trendingCount, setTrendingCount] = useState(1);
 
   const movieTrending = async (url) => {
     setLoading(true);
@@ -36,7 +35,10 @@ const Lower = (props) => {
     setLoading(false);
   };
 
-  //user search
+  const loadMoreTrending = () => {
+    setTrendingCount(trendingCount + 1);
+  };
+
   useEffect(() => {
     const searchUrl = `${API_URL}search/movie?api_key=${API_KEY}&page=1&query=`;
     const trendingUrl = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -49,6 +51,12 @@ const Lower = (props) => {
     }
   }, [searchInput]);
 
+  useEffect(() => {
+    const trendingUrl = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${trendingCount}`;
+
+    movieTrending(trendingUrl);
+  }, [trendingCount]);
+
   return (
     <div className="lower-container">
       {loading ? (
@@ -56,12 +64,15 @@ const Lower = (props) => {
       ) : search ? (
         <>
           <div className="head">Searching for: {searchInput}</div>
-          <DisplayPoster movies={searchMovie} />
+          <DisplayPoster movies={searchMovie} loading={loading} />
         </>
       ) : (
         <>
-          <div className="head">Popular</div>
-          <DisplayTrending trending={trendingMovie} />
+          <div className="head">
+            Popular {trendingCount > 1 ? <>/ Page: {trendingCount}</> : null}
+          </div>
+          <DisplayTrending trending={trendingMovie} loading={loading} />
+          <Button type="submit" value="Next Page" onClick={loadMoreTrending} />
         </>
       )}
     </div>

@@ -9,25 +9,36 @@ import {
   POSTER_SIZE,
   BACKDROP_SIZE,
 } from "../../Configs";
+import Spinner from "../Spinner/Spinner";
 
 const DisplayTrending = (props) => {
   const displayTrending = props.trending.map((data, index) => {
     const posterImage = `${IMAGE_BASE_URL}${POSTER_SIZE}/${data.poster_path}`;
 
     return (
-      <Link to={"./movie/" + data.id}>
-        <img
-          className={styles.img}
-          key={index}
-          src={data.poster_path ? posterImage : noImage}
-          id={data.id}
-          alt="moviethumbnail"
-        />
-      </Link>
+      <>
+        {props.loading ? (
+          <Spinner />
+        ) : (
+          <Link to={"./movie/" + data.id}>
+            <img
+              className={styles.img}
+              key={index}
+              src={data.poster_path ? posterImage : noImage}
+              id={data.id}
+              alt="moviethumbnail"
+            />
+          </Link>
+        )}
+      </>
     );
   });
 
-  return <div className="movie-thumbnail">{displayTrending}</div>;
+  return (
+    <>
+      <div className="movie-thumbnail">{displayTrending}</div>
+    </>
+  );
 };
 
 export default DisplayTrending;

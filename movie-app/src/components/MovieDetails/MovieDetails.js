@@ -70,7 +70,7 @@ const MovieDetails = () => {
             revenue={movieDetails.revenue}
           />
           <h1>Casts</h1>
-          <Actors actors={actors} />
+          <Actors actors={actors} loading={loading} />
         </>
       )}
     </div>
